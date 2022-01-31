@@ -3,3 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 alert('Hello World!');
+setTimeout(function() {
+    alert('Hello Git!');
+}, 5000);
