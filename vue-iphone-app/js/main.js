@@ -8,6 +8,16 @@ const myApp = Vue.createApp({
             inStock: true,
             // quantity: 6,
             specs: ['5G speed', 'Edge-to-edge OLED display', 'Ceramic Shield'],
+            variants: [
+                { id: 'iphone13-001', color: 'blue', image: './assets/images/iphone-13-blue.png' },
+                { id: 'iphone13-002', color: 'midnight', image: './assets/images/iphone-13-midnight.png' },
+                { id: 'iphone13-003', color: 'red', image: './assets/images/iphone-13-red.png' },
+            ],
+        }
+    },
+    methods: {
+        updateImage(imageUrl) {
+            this.image = imageUrl
         }
     }
 })
