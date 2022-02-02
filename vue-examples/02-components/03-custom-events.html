@@ -12,7 +12,7 @@
 <body>
     <div id="app">
         <h2>Counter: {{ counter }}</h2>
-        <button-counter @increment="counter++"></button-counter>
+        <button-counter @increment="IncrementCounter"></button-counter>
     </div>
     <script>
         const myApp = Vue.createApp({
@@ -20,10 +20,20 @@
                 return {
                     counter: 0,
                 }
+            },
+            methods: {
+                IncrementCounter() {
+                    this.counter++;
+                }
             }
         })
         myApp.component('button-counter', {
-            template: `<button @click="$emit('increment')">+1</button>`,
+            template: `<button @click="addPlusOne">+1</button>`,
+            methods: {
+                addPlusOne() {
+                    this.$emit('increment')
+                }
+            }
         })
         myApp.mount('#app');
     </script>
