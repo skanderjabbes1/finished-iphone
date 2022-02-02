@@ -33,7 +33,8 @@
                     <div v-for="(variant, ind) in variants" :key="variant.id" @mouseover="activeVariant = ind"
                         class="color-circle" :style="{backgroundColor: variant.color}">
                     </div>
-                    <button @click="cart++" class="button">Add to cart</button>
+                    <button @click="cart++" :disabled="!inStock" class="button" :class="{disabledButton: !inStock}">Add
+                        to cart</button>
                 </div>
             </div>
         </div>
