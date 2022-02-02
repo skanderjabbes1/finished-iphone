@@ -11,12 +11,20 @@
 
 <body>
     <div id="app">
-        <my-component message="Welcome to Vue.js"></my-component>
-        <my-component message="Welcome to React"></my-component>
-        <my-component message="Welcome to Angular"></my-component>
+        <my-component :message="vueMessage"></my-component>
+        <my-component :message="reactMessage"></my-component>
+        <my-component :message="angularMessage"></my-component>
     </div>
     <script>
-        const myApp = Vue.createApp({});
+        const myApp = Vue.createApp({
+            data() {
+                return {
+                    vueMessage: "Welcome to Vue.js",
+                    reactMessage: "Welcome to React",
+                    angularMessage: "Welcome to Angular"
+                }
+            }
+        });
         myApp.component('my-component', {
             template: '<h1>{{message}}</h1>',
             props: ['message']
