@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js</title>
+    <script src="https://unpkg.com/vue@3.2.29"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>Montant TTC: <strong>{{ montantTTC }}</strong></p>
+    </div>
+    <script>
+        const myApp = Vue.createApp({
+            data() {
+                return {
+                    montantHT: 4500,
+                    tauxTVA: 20,
+                }
+            },
+            computed: {
+                montantTTC() {
+                    return this.montantHT * (1 + this.tauxTVA / 100)
+                }
+            }
+        })
+        myApp.mount('#app');
+    </script>
+</body>
+
+</html>
