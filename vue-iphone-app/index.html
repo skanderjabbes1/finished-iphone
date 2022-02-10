@@ -13,6 +13,7 @@
 <body>
     <div id="app">
         <navbar-component></navbar-component>
+<<<<<<< HEAD
         <cart-component :count="cart"></cart-component>
         <!-- <div class="cart">Cart({{cart}})</div> -->
         <!-- <div class="product-display">
@@ -49,6 +50,11 @@
         <product-component @add-to-cart="cart++"></product-component>
         <reviewzone-component></reviewzone-component>
 
+=======
+        <cart-component :cart="cart"></cart-component>
+        <product-component @add-to-cart="cart++"></product-component>
+        <review-zone-component></review-zone-component>
+>>>>>>> ef30e17eb531feb0b7e8c2b362966e4bc4abe50d
     </div>
     <script src="./js/main.js" type="module"></script>
 </body>

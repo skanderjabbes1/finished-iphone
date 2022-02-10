@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js</title>
+    <script src="https://unpkg.com/vue@3.2.29"></script>
+</head>
+
+<body>
+    <div id="app">
+        <my-component :message="vueMessage"></my-component>
+        <my-component :message="reactMessage"></my-component>
+        <my-component :message="angularMessage"></my-component>
+    </div>
+    <script>
+        const myApp = Vue.createApp({
+            data() {
+                return {
+                    vueMessage: "Welcome to Vue.js",
+                    reactMessage: "Welcome to React",
+                    angularMessage: "Welcome to Angular"
+                }
+            }
+        });
+        myApp.component('my-component', {
+            template: '<h1>{{message}}</h1>',
+            props: ['message']
+        })
+        myApp.mount('#app');
+    </script>
+</body>
+
+</html>
