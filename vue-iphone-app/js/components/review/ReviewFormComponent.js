@@ -21,7 +21,17 @@ const reviewFormComponent = {
             review: '',
             rating: 3,
         }
-    }
+    },
+    methods: {
+        onSubmit() {
+            let productReview = {
+                name: this.name,
+                review: this.review,
+                rating: this.rating,
+            }
+            this.$emit('review-submitted', productReview);
+        }
+    },
 }
 
 export default reviewFormComponent;
