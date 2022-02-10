@@ -1,10 +1,14 @@
+import reviewFormComponent from './ReviewFormComponent.js';
 const reviewZoneComponent = {
     template: `
         <div class="review-zone">
-            <h2>ReviewFormComponent</h2>
+            <reviewFormComponent></reviewFormComponent>
             <h2>ReviewListComponent</h2>
         </div>
-        `
+        `,
+    components: {
+        'reviewFormComponent': reviewFormComponent,
+    },
 }
 
 export default reviewZoneComponent
