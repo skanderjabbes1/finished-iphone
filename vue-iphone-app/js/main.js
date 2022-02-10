@@ -1,35 +1,25 @@
-const myApp = Vue.createApp({
-    data() {
-        return {
-            cart: 0,
-            product: "iPhone 13",
-            description: "iPhone 13 is the latest iPhone in the iPhone series. It is powered by a 2.84-GHz dual-core processor and has a camera system that can take up to 8 photos in a single burst.",
-            // image: './assets/images/iphone-13-blue.png',
-            // inStock: true,
-             
-            specs: ['5G speed', 'Edge-to-edge OLED display', 'Ceramic Shield'],
-            variants: [
-                { id: 'iphone13-001',quantity: 1, color: 'blue', image: './assets/images/iphone-13-blue.png' },
-                { id: 'iphone13-002',quantity: 6, color: 'black', image: './assets/images/iphone-13-midnight.png' },
-                { id: 'iphone13-003',quantity: 0, color: 'red', image: './assets/images/iphone-13-red.png' },
-            ],
-            activeVariant:0
-          
-        }
-    },
-    // methods: {
-    //     updateImage(imageUrl) {
-    //         this.image = imageUrl
-    //     }
-    // },
-    computed: {
-        instock() {
-            return this.variants[this.activeVariant].quantity
-        },
-        image(){
-            return this.variants[this.activeVariant].image
+import app from './app.js';
 
-        }
-    }
-})
+import navbarComponent from './components/NavbarComponent.js'
+import cartComponent from './components/CartComponent.js'
+import productComponent from './components/ProductComponent.js'
+import reviewZoneComponent from './components/ReviewZoneComponent.js'
+//import formulaireComponent from './components/FormulaireComponent.js'
+//import affichageComponent from './components/AffichageComponent.js'
+
+// Vue application
+const myApp = Vue.createApp(app);
+
+// Components
+
+myApp.component('navbar-component', navbarComponent);
+myApp.component('cart-component', cartComponent);
+myApp.component('product-component', productComponent);
+//myApp.component('formulaire-component', formulaireComponent);
+//myApp.component('affichage-component', affichageComponent);
+myApp.component('reviewzone-component', reviewZoneComponent);
+
+
+// Mount the application
+
 myApp.mount('#app');
